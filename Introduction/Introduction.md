@@ -88,13 +88,13 @@ $$
 In this case **W** is a matrix that contain all the weights coefficients,
 
 $$
-\begin{align}
+
 W =
 \left(\begin{array}{cc} 
 w_{a1} & w_{b1} & w_{c1}\\
 w_{a2} & w_{b2} & w_{c2}
 \end{array}\right)
-\end{align}
+
 
 
 $$
