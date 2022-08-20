@@ -30,8 +30,6 @@ In order, to move on to the next neuron there is an activation function that che
   $$
   tanh(z) = \frac{e^{z} - e^{-z}}{e^{z} + e^{-z}}
   $$
-  
-  
 
 - **Rectified Linear Unit (ReLU)**:
   
@@ -73,7 +71,6 @@ class Neuron:
     def show(self):
         print("The activation function selected: ", self.activation_func)
         print("The array containing the weights is : ", self.W)
-
 ```
 
 ### 
@@ -91,11 +88,13 @@ $$
 In this case **W** is a matrix that contain all the weights coefficients,
 
 $$
+\begin{align}
 W =
 \left(\begin{array}{cc} 
 w_{a1} & w_{b1} & w_{c1}\\
 w_{a2} & w_{b2} & w_{c2}
 \end{array}\right)
+\end{align}
 
 
 $$
@@ -103,14 +102,14 @@ $$
 So, the activation function applied to this layer will have the form,
 
 $$
+\begin{align}
 \vec{y} = f(\vec{x}) = (f(\vec{x_{a}}), f(\vec{x_{b}}), f(\vec{x_{c}}))
+\end{align}
 $$
 
 The output of the activation function is used in the following layer as the input and so on.
 
 Most of the times, we need a bunch of inputs to train our model, that is called **batch**.
-
-
 
 ### Training a Neural Network
 
@@ -121,8 +120,6 @@ Training a NN means to optimize the parameters for a task by using the available
 - **Unsupervised Learning**: The NN computs the loss only based on its inputs and outputs. This method is useful for clustering, and compression (compare the properties of the compress data with respect the original data).
 
 - **Reinforcement Learning**: An agent has some actions (walk, jump, ...) and navigate through an environment. Once the list of actions has finished the agent reach an state. There are some states that bring rewards. These rewards serve as feedback for the NN. The NN would modify the actions in order to maximize the rewards.
-
-
 
 #### Loss Functions
 
@@ -146,8 +143,6 @@ The goal of the loss function is to evaluate how well the network, with its curr
   BCE(y, y^{true}) = \sum_{i} \left[-y_{i}^{true}log(y_{i}) + (1 - y_{i}^{true})log(1-y_{i})\right]
   $$
 
-
-
 At each training iteration of the training process, the derivatives of the loss with respect to each parameter of the network are computed. These derivatives indicate which small changes to the parameters need to be applied (with a -1 coefficient since the gradient indicates the direction of increase of the function, while we want to minimize it).
 
 To compute this derivatives with respect the weights of the k-layer, we need to apply the chain rule:
@@ -167,5 +162,3 @@ $$
 - $\epsilon$ : Learning rate that control how each parameter should be updated in each iteration. If the learning rate is large the NN learns faster, but the NN could miss the minimal loss due to big steps.
 
 - **Epoch** : One iteration over the whole training set.
-  
-  
